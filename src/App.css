@@ -20,7 +20,8 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to center, rgba(0,0,0,0.2), rgba(255,255,255,0.1));
+  /* 수정된 부분 */
+  background: radial-gradient(circle at center, rgba(0,0,0,0.2), rgba(255,255,255,0.1));
   border-radius: 8px;
 }
 
@@ -97,9 +98,6 @@
   transform: scale(1.05);
   opacity: 0.9;
 }
-.controls button.start { background: #ff7043; color: white; }
-.controls button.reset { background: #4db6ac; color: white; }
-.controls button.next { background: #ba68c8; color: white; }
 
 /* 루틴 목록 */
 .routine-list ul {
@@ -117,15 +115,6 @@
   border-radius: 8px;
   margin-bottom: 6px;
 }
-button.small {
-  padding: 6px 12px;
-  background: #ffb74d;
-  color: white;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-}
-button.delete { background: #e57373; }
 
 /* 루틴 추가 폼 */
 .routine-add .add-form {
@@ -134,7 +123,8 @@ button.delete { background: #e57373; }
   flex-wrap: wrap;
   align-items: center;
 }
-.routine-add input, .routine-add select {
+.routine-add input,
+.routine-add select {
   padding: 8px 12px;
   border-radius: 8px;
   border: 1px solid #ffd700;
