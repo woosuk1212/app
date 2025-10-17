@@ -1,0 +1,155 @@
+/* 전체 레이아웃 */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  background: #fff7f0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* 사이드 사진 */
+.side-photo {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+.side-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to center, rgba(0,0,0,0.2), rgba(255,255,255,0.1));
+  border-radius: 8px;
+}
+
+/* 중앙 메인 영역 */
+.main {
+  width: 820px;
+  max-width: 100%;
+  padding: 28px;
+  background: #fff9f6;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  z-index: 1;
+  margin: auto 20px;
+  border-radius: 16px;
+  border: 2px dashed #ffb347;
+}
+
+/* 헤더 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.title {
+  font-size: 32px;
+  margin: 0;
+  color: #ff6f61;
+}
+.subtitle {
+  color: #555;
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+.clock {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* 루틴 박스 */
+.routine-box {
+  border: 2px solid #ffd700;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  background: #fff3e0;
+  position: relative;
+}
+.current-name {
+  color: #d84315;
+  font-weight: bold;
+  margin: 8px 0;
+}
+.timer {
+  font-family: 'Courier New', monospace;
+  font-size: 36px;
+  margin: 10px 0 16px;
+  color: #ff5722;
+  text-shadow: 1px 1px 2px #fff;
+}
+
+/* 버튼 그룹 */
+.controls button {
+  margin-right: 10px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.controls button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+.controls button.start { background: #ff7043; color: white; }
+.controls button.reset { background: #4db6ac; color: white; }
+.controls button.next { background: #ba68c8; color: white; }
+
+/* 루틴 목록 */
+.routine-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.routine-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 8px;
+  border-bottom: 1px dashed #ffd700;
+  background: #fff0f5;
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+button.small {
+  padding: 6px 12px;
+  background: #ffb74d;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+button.delete { background: #e57373; }
+
+/* 루틴 추가 폼 */
+.routine-add .add-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.routine-add input, .routine-add select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ffd700;
+}
+.routine-add button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: #ff7043;
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+
+/* 반응형 */
+@media (max-width: 980px) {
+  .side-photo { display: none; }
+  .main { width: 100%; margin: 14px; box-shadow: none; background: #fff9f6; }
+}
